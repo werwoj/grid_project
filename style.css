@@ -1,0 +1,124 @@
+:root {
+    --color-moderate-violet: hsl(263, 55%, 52%);
+    --color-very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --color-very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-light-gray: hsl(0, 0%, 81%);
+    --color-grayish-blue: hsl(210,46%, 95%);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: var(--color-grayish-blue);
+    max-height: 100vh;
+}
+
+.about {
+    display: flex;
+    flex-direction: row;
+    font-size: 8px;
+}
+h2 {
+    opacity: 50%;
+}
+.personal-info{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-left: 10px;
+    color: white;
+}
+svg {
+    position: absolute;
+    top: 50px;
+    left: 30%;
+    opacity: 50%;
+}
+img {
+    border-radius: 50%;
+    padding: 5px;
+}
+.feedback:nth-child(1) {
+    background-color: var(--color-moderate-violet);
+}
+.feedback:nth-child(2) {
+    background-color: var(--color-very-dark-grayish-blue);
+}
+.feedback:nth-child(3),
+.feedback:nth-child(5) {
+    background-color: var(--color-white);
+}
+.feedback:nth-child(4) {
+    background-color: var(--color-very-dark-blackish-blue);
+}
+.page {
+    margin-top: 50px;
+    margin-right: 40px;
+    margin-left: 40px;
+    max-height: 100%;
+    display: grid; 
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "one one two three"
+    "four five five three";
+    column-gap: 25px;
+    row-gap: 25px;
+}
+
+.feedback {
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+}
+.info {
+    opacity: 70%;
+}
+.one {
+    grid-area: one;
+}
+.two {
+    grid-area: two;
+}
+.three {
+    grid-area: three;
+}
+.four {
+    grid-area: four;
+}
+.five {
+    grid-area: five;
+}
+.three .personal-info,
+.five .personal-info {
+    color: black;
+}
+.feedback.three,
+.feedback.five {
+    color: black;
+}
+.opinion {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+@media (max-width: 840px) {
+    .page {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 15% 1fr 15% 1fr;
+        grid-template-areas: 
+        "one"
+        "two"
+        "three"
+        "four"
+        "five";
+        
+    }
+    svg {
+        left: 40%;
+    }
+    
+}
